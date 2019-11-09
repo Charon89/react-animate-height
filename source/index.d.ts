@@ -1,6 +1,6 @@
-import { Component, CSSProperties, ReactNode, HTMLAttributes } from "react"
+import { Component, CSSProperties, ReactNode } from "react"
 
-export type AnimationStateClasses = {
+export interface AnimationStateClasses {
   animating?: string;
   animatingUp?: string;
   animatingDown?: string;
@@ -13,7 +13,7 @@ export type AnimationStateClasses = {
   staticHeightSpecific?: string;
 }
 
-export type AnimateHeightProps = {
+export interface AnimateHeightProps {
   animateOpacity?: boolean;
   animationStateClasses?: AnimationStateClasses;
   applyInlineTransitions?: boolean;
@@ -27,7 +27,7 @@ export type AnimateHeightProps = {
   onAnimationEnd?(props: { newHeight: number }): void;
   onAnimationStart?(props: { newHeight: number }): void;
   style?: CSSProperties;
-} & HTMLAttributes<HTMLDivElement>
+}
 
 declare class AnimateHeight extends Component<AnimateHeightProps> {}
 
